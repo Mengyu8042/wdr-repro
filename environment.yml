@@ -1,0 +1,34 @@
+name: wdr
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - numpy=1.26.*
+  - scipy=1.10.*
+  - matplotlib=3.9.2
+  - pyyaml=6.0
+  - pillow=10.*
+  - pytorch=2.0.1
+  - pytorch-cuda=11.8
+  - mkl=2022.1.0
+  - torchvision=0.15.2
+  - numba=0.57.*
+  - llvmlite=0.40.*
+  - pip:
+      - pot==0.9.1
+      - hilbertcurve==2.0.5
+      - huggingface-hub==0.20.*
+      - fire==0.5.0
+      - blobfile==2.0.2
+      - lpips==0.1.4
+      - torch-fidelity==0.3.0
+      - tqdm==4.65.*
+
+# CPU-only substitution for the simulation side: replace the two GPU lines
+#   - pytorch-cuda=11.8
+#   - pytorch=2.0.1
+# with the single line
+#   - pytorch=2.0.1 cpuonly

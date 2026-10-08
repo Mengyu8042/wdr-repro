@@ -1,0 +1,6 @@
+name: "class_cond_gen"
+classifier_path: ./models/classifier_mnist.pth.tar
+dataset_path: ./datasets/mnist_test
+image_size: 28 
+rgb: false 
+classifier_guidance_scale: 1.0 

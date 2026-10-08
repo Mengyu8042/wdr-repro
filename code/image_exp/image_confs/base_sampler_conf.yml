@@ -1,0 +1,5 @@
+name: "tds"
+num_particles: 32
+resample_strategy: "t-wdr" 
+ess_threshold: 0.5
+R: 3  

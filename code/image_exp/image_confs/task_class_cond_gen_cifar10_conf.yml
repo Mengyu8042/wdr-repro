@@ -1,0 +1,6 @@
+name: "class_cond_gen"
+classifier_path: ./models/classifier_cifar10.pth.tar
+dataset_path: ./datasets/cifar10_test
+image_size: 32
+rgb: true
+classifier_guidance_scale: 1.0

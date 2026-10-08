@@ -1,0 +1,17 @@
+clip_denoised: true
+diffusion_steps: 4000
+learn_sigma: true
+noise_schedule: cosine
+num_channels: 128
+num_res_blocks: 3
+attention_resolutions: "16,8"
+dropout: 0.3
+use_checkpoint: false
+use_new_attention_order: false
+image_size: 32
+model_path: ./models/uncond_model_cifar10.pt
+rgb: true
+timestep_respacing: '100'
+rescale_timesteps: true
+rescale_learned_sigmas: true
+

@@ -26,8 +26,8 @@ class label.
 
 The image experiments in Figures 6--7 concern class-conditional image generation: 
 the class label specifies the images to generate. For Frechet Inception Distance 
-(FID) evaluation, `code/image_exp/run_image.py` loads each dataset's training 
-split of each dataset through `torchvision` and selects the first 2,000 images of
+(FID) evaluation, `code/image_exp/run_image.py` loads the training split of each
+dataset through `torchvision` and selects the first 2,000 images of
 each class in dataset order. This gives 20,000 real reference images for an
 experiment across all ten classes. The datasets are downloaded automatically
 into `code/image_exp/data/` when FID evaluation is enabled.
@@ -41,7 +41,7 @@ into `code/image_exp/data/` when FID evaluation is enabled.
 | Label | Integer 0--9 denoting the digit | Integer 0--9 denoting, in order, airplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck |
 
 `torchvision` handles the dataset downloads and archive formats. In 
-`build_real_pool_mnist` and `build_real_pool_cifar10`, `ToTensor` transform 
+`build_real_pool_mnist` and `build_real_pool_cifar10`, the `ToTensor` transform
 converts the image pixels to floating-point tensors with values in [0, 1].
 
 ## Pretrained model files

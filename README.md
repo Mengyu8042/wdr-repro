@@ -26,9 +26,8 @@ files by their roles.
 | Role | Main files and their purpose |
 |---|---|
 | State-space resampling | [ot_resampling.py](code/simulation/ot_resampling.py) implements WDR/T-WDR and classical baselines for state-space simulations. [hilbert_resampling.py](code/simulation/hilbert_resampling.py) provides Hilbert-curve stratified resampling. |
-| Spatial block filtering | [hd_model.py](code/simulation/hd_model.py) defines the spatial model and block particle filter. [hd_wdr_batched.py](code/simulation/hd_wdr_batched.py) implements batched WDR for spatial blocks; [run_hd_filter.py](code/simulation/run_hd_filter.py) connects it to the filter. |
 | Image resampling | [image_ot_resampling.py](code/image_exp/smc_utils/image_ot_resampling.py) implements WDR/T-WDR for VAE latent features in the image experiments. [smc_utils.py](code/image_exp/smc_utils/smc_utils.py) connects these methods to the SMC loop in [feynman_kac_pf.py](code/image_exp/smc_utils/feynman_kac_pf.py). |
-| Models and experiment drivers | [lg_common.py](code/simulation/lg_common.py) defines the linear Gaussian model, data generation, propagation, and Kalman reference. The shell scripts in [code/experiments/](code/experiments/) launch the simulation drivers in [code/simulation/](code/simulation/). [run_image.py](code/image_exp/run_image.py) runs class-conditional image generation using [image_confs/](code/image_exp/image_confs/). |
+| Models and experiment drivers | [lg_common.py](code/simulation/lg_common.py) defines the linear Gaussian model, data generation, propagation, and Kalman reference calculation. [run_image.py](code/image_exp/run_image.py) runs class-conditional image generation using [image_confs/](code/image_exp/image_confs/). |
 
 To adapt the methods to a new setting:
 
@@ -37,9 +36,6 @@ To adapt the methods to a new setting:
   initialization, propagation, and observation likelihood. Pass particles
   of shape `(N, d)`, normalized weights of shape `(N,)`, a NumPy generator,
   and the desired output size. 
-- For a spatial model, use `hd_model.block_filter` as the example for
-  defining blocks and local observation sets, and `run_hd_filter.py` for
-  supplying the blockwise resampler.
 - For diffusion image generation, start from `run_image.py` and
   `image_confs/` when adapting the diffusion model and conditioning tasks. 
   The `P`, `R` and `strategy` settings in the launch scripts control
